@@ -458,21 +458,20 @@ footer {
 <body>
   <aside class="provenance-status" role="status" aria-live="polite">
     <span class="provenance-status__word">AGENT BRIDGE</span>
-    <span class="provenance-status__text">This is a real PyPI package, and the quickstart above is copied verbatim from its README. It is a small PLATO domain agent, not a finished analytics product. A larger pipeline—businesslog-ai for analysis and businesslog-app for structured logging—is referenced but not yet shipped around it.</span>
+    <span class="provenance-status__text">This is a real PyPI package (0.2.0). It is a small PLATO domain agent, not a finished analytics product. The quickstart signatures below are consistent with the package's <code>fleet-agent</code> dependency and "PLATO fleet enabled" summary but could not be confirmed from PyPI (its long-description is empty); verify against the package source before relying on them. A larger pipeline—businesslog-ai for analysis and businesslog-app for structured logging—is referenced but not yet shipped.</span>
   </aside>
 
   <div class="wrap">
     <header class="hero">
       <p class="eyebrow">businesslog.ai</p>
-      <h1>A business metric is only useful if you can ask it questions later.</h1>
-      <p class="subhead">businesslog-agent writes business events to PLATO, the org's tile-based knowledge store, so trends and patterns can be queried across time instead of vanishing into a log stream.</p>
+      <h1><code>businesslog-agent</code> — business events written to PLATO as queryable tiles</h1>
+      <p class="subhead"><code>businesslog-agent</code> is a thin Python bridge that turns business events (sales, signups, failed checkouts) into tiles in PLATO, the org's tile-based knowledge store, and exposes simple trend queries over the resulting history.</p>
     </header>
 
     <section id="what">
       <h2>What This Is</h2>
-      <p>Most business data starts as an event: a sale, a signup, a failed checkout. If that event is only a line in a log, answering “how are enterprise sales trending this quarter?” means wrangling logs, parsing JSON, and hoping the retention window has not closed. The question is reasonable; the plumbing is not.</p>
-<p><strong>PLATO</strong> is a tile-based knowledge store: each record is a small, addressable tile that any agent can read later without retraining. <strong>businesslog-agent</strong> is the thin Python bridge that turns your business events into those tiles and lets you query them back out. It records what happened, stores it where later agents can find it, and exposes simple trend queries over the history.</p>
-<p>This is not a dashboard or a replacement for your analytics platform. It is the memory layer underneath: the part that makes the raw history queryable in the first place.</p>
+      <p>Most business data starts as an event: a sale, a signup, a failed checkout. If that event is only a line in a log, answering &ldquo;how are enterprise sales trending this quarter?&rdquo; means wrangling logs, parsing JSON, and hoping the retention window has not closed.</p>
+<p><strong>PLATO</strong> is a tile-based knowledge store: each record is a small, addressable tile that any agent can read later without retraining. <strong>businesslog-agent</strong> is the Python bridge that turns a business event into one of those tiles and exposes trend queries over the history. It is not a dashboard or a replacement for an analytics platform; it is the memory layer underneath, the part that makes the raw history queryable in the first place.</p>
     </section>
 
     <section id="quickstart">
@@ -496,7 +495,7 @@ metrics = query_metrics(room=&quot;businesslog&quot;, limit=50)</code></pre>
 
     <section class="honest" id="honesty">
       <h2 class="eyebrow">Honesty Note</h2>
-      <p>This is a real PyPI package, and the quickstart above is copied verbatim from its README. It is a small PLATO domain agent, not a finished analytics product. A larger pipeline—businesslog-ai for analysis and businesslog-app for structured logging—is referenced but not yet shipped around it.</p>
+      <p>This is a real PyPI package (0.2.0, owner <code>superinstance</code>, Python ≥3.10, depends on <code>fleet-agent&gt;=0.2.0</code> and <code>requests</code>). It is a small PLATO domain agent, not a finished analytics product. The quickstart signatures above are consistent with the package's <code>fleet-agent</code> dependency and "PLATO fleet enabled" summary, but the published PyPI long-description is empty, so the exact symbol names (<code>write_tile</code>, <code>query_metrics</code>) and call shapes could not be confirmed from PyPI — verify against the package source before relying on them. A larger pipeline—businesslog-ai for analysis and businesslog-app for structured logging—is referenced but not yet shipped.</p>
     </section>
 
     <footer>

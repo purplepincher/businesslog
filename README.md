@@ -42,8 +42,7 @@ the history can be queried across time instead of rotting in a log stream.
 | A larger pipeline (`businesslog-ai` for analysis, `businesslog-app` for structured logging) exists | 🔮 **aspirational** — the page itself says these are "referenced but not yet shipped around it." |
 
 The page's own persistent status banner reads **`AGENT BRIDGE`** and is explicit
-that this is a thin agent, not a finished product. That framing is intentional
-and is part of this org's standing practice of not overselling.
+that this is a thin agent, not a finished product.
 
 ## What this repo is NOT
 
